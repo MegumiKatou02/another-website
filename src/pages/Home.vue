@@ -79,7 +79,7 @@ const socialsList = [
   height: calc(100vh - 52px);
   background-color: black;
   background: url('@/assets/img/background.jpg');
-  /* overflow: hidden; */
+  overflow-x: auto;
 }
 
 .container-info {
