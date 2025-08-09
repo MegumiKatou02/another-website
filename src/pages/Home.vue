@@ -13,6 +13,7 @@
             <a :href="social.link"
               ><img :src="social.img" :alt="social.altName" width="20" height="20"
             /></a>
+            <span>{{ social.name }}</span>
           </li>
         </ul>
       </div>
@@ -31,41 +32,40 @@ const socialsList = [
   {
     link: 'https://github.com/MegumiKatou02',
     img: 'github.svg',
+    name: 'Github',
     altName: 'Github Logo',
   },
   {
     link: 'https://www.npmjs.com/~yukiookii',
     img: 'npm.svg',
+    name: 'Npmjs',
     altName: 'Npm Logo',
   },
   {
     link: 'https://discord.com/users/604949724788817920',
     img: 'discord.svg',
+    name: 'Discord',
     altName: 'Discord Logo',
   },
   {
     link: 'https://linktr.ee/yukiooki_',
     img: 'linktree.svg',
+    name: 'Linktree',
     altName: 'Linktree Logo',
   },
   {
     link: 'https://open.spotify.com/user/31uoe4jzedryeongjz5ymntipfvq',
     img: 'spotify.svg',
+    name: 'Spotify',
     altName: 'Spotify Logo',
   },
   {
     link: 'https://soundcloud.com/tuy-t-721347328',
     img: 'soundcloud.svg',
+    name: 'Soundcloud',
     altName: 'Soundcloud Logo',
   },
 ]
-
-const baseUrl = import.meta.env.BASE_URL
-console.log('BASE_URL:', baseUrl)
-
-socialsList.forEach((s) => {
-  console.log(`${baseUrl}${s.img}`)
-})
 </script>
 
 <style scoped>
@@ -79,6 +79,7 @@ socialsList.forEach((s) => {
   height: calc(100vh - 52px);
   background-color: black;
   background: url('@/assets/img/background.jpg');
+  /* overflow: hidden; */
 }
 
 .container-info {
@@ -130,6 +131,10 @@ socialsList.forEach((s) => {
   gap: 10px;
 }
 
+.about .socials-list span {
+  display: none;
+}
+
 .about .socials-list li {
   padding: 7px;
   background-color: var(--bg-secondary);
@@ -140,5 +145,64 @@ socialsList.forEach((s) => {
 .about .socials-list li a {
   color: white;
   filter: invert(1);
+}
+
+@media (max-width: 642px) {
+  .container-info {
+    flex-direction: column;
+    margin: 0 2.4rem;
+    height: 600px;
+    align-items: center;
+    padding: 5px 25px;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 9rem;
+    height: 8rem;
+  }
+
+  .container-info .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about .socials-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about .socials-list span {
+    display: inline-block;
+    color: var(--text-secondary);
+    font-size: 18px;
+  }
+
+  .about .socials-list li {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.95rem;
+  }
+  .about .socials-list li a {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 498px) {
+  .about .name {
+    font-size: 2rem;
+  }
+
+  .about .description {
+    font-size: 0.96rem;
+  }
 }
 </style>

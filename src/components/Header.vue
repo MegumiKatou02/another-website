@@ -48,4 +48,13 @@ defineOptions({
   border: #4a4a4a 1px solid;
   border-radius: 2px;
 }
+
+@media (max-width: 498px) {
+  .website-list a {
+    font-size: 16px;
+  }
+  .website-list {
+    gap: 0.6rem;
+  }
+}
 </style>
