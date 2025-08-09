@@ -30,35 +30,42 @@ defineOptions({
 const socialsList = [
   {
     link: 'https://github.com/MegumiKatou02',
-    img: '/github.svg',
+    img: 'github.svg',
     altName: 'Github Logo',
   },
   {
     link: 'https://www.npmjs.com/~yukiookii',
-    img: '/npm.svg',
+    img: 'npm.svg',
     altName: 'Npm Logo',
   },
   {
     link: 'https://discord.com/users/604949724788817920',
-    img: '/discord.svg',
+    img: 'discord.svg',
     altName: 'Discord Logo',
   },
   {
     link: 'https://linktr.ee/yukiooki_',
-    img: '/linktree.svg',
+    img: 'linktree.svg',
     altName: 'Linktree Logo',
   },
   {
     link: 'https://open.spotify.com/user/31uoe4jzedryeongjz5ymntipfvq',
-    img: '/spotify.svg',
+    img: 'spotify.svg',
     altName: 'Spotify Logo',
   },
   {
     link: 'https://soundcloud.com/tuy-t-721347328',
-    img: '/soundcloud.svg',
+    img: 'soundcloud.svg',
     altName: 'Soundcloud Logo',
   },
 ]
+
+const baseUrl = import.meta.env.BASE_URL
+console.log('BASE_URL:', baseUrl)
+
+socialsList.forEach((s) => {
+  console.log(`${baseUrl}${s.img}`)
+})
 </script>
 
 <style scoped>
@@ -112,13 +119,13 @@ const socialsList = [
 
 .about .description {
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 23px;
   font-weight: 300;
 }
 
 .about .socials-list {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   gap: 10px;
 }
